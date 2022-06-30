@@ -1,0 +1,37 @@
+model_opts:
+  name: "Unet"
+  args:
+    inchannels: 3
+    outchannels: 1
+    # The net_depth will change accordingly to the patch size. For 128x128 it is 3, for 256x256 it is 4. This will define the number of layers of the architecture.
+    net_depth: 4 
+    
+train_par:
+  gpu_to_use: 'cuda:0' # 'cuda:1', select the GPU where you want your training. if 'default' it will use torch.device("cuda" if torch.cuda.is_available() else "cpu")
+  random_seed: 'default' # set to 'default' to replicate MICCAI's results
+  epochs: 100
+  batch_size: 4
+  workers: 4
+  lr: 0.01
+  eval_threshold: 0.5
+  patience: 15
+  early_stopping_flag: True
+  results_path: "results/128x128"
+  optimizer:
+    name: 'Adadelta'
+  loss_opts:
+    name: 'BCEDiceLoss'
+    args:
+      weight: 0.5 # this is for BCELogits (value will be computed automatically) & BCEDiceLoss (you need to input a value, default: 0.1)
+      alpha: 1 # this is only for focal loss
+      gamma: 2 # this is only for focal loss
+
+dataset:
+  experiment: "name your experiment correctly"
+  data_dir: "../dataset/128x128"
+  train: "data/experiment_002/train_00_cv_00.csv"
+  dev: "data/experiment_002/dev_00_cv_00.csv"
+  test: "data/experiment_002/test_00.csv"
+  normalization: "macenko"
+  cache_data: True
+  rescale_factor: 128
