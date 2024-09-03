@@ -53,21 +53,23 @@ dataset
 │   └── new_wsi_00
 │   │   └── macenko
 │   │   └── masks
+│   │   └── patches
 │   │   └── vahadane
 │   └── new_wsi_01
 │   │   └── macenko
 │   │   └── masks
+│   │   └── patches
 │   │   └── vahadane
 │   └── ...
 └── 256x256
     └── new_wsi_00
     │   └── macenko
     │   └── masks
-    │   └── vahadane
+    │   └── patches
     └── new_wsi_01
     │   └── macenko
     │   └── masks
-    │   └── vahadane
+    │   └── patches
     └── ...
 ```
 
@@ -75,7 +77,8 @@ dataset
 |:------------:|:---------------:|
 |  **macenko** | contains all the patches and its corresponding corner augmentations using Macenko method for color normalization. Files are named in sequential order according to the annotations in the WSI and the augmented ones have an additional `_Cx.png` added to the name, where `x` is one of the four corners. |
 |    **masks** | contains all the masks and its corresponding corner augmentations. Files are named in sequential order according to the annotations in the WSI and the augmented ones have an additional `_Cx.png` added to the name, where `x` is one of the four corners. |
-| **vahadane** | contains all the patches and its corresponding corner augmentations using Vahadane method for color normalization. Files are named in sequential order according to the annotations in the WSI and the augmented ones have an additional `_Cx.png` added to the name, where `x` is one of the four corners. |
+|    **patches** | contains all the original unnormalized patches and its corresponding corner augmentations. Files are named in sequential order according to the annotations in the WSI and the augmented ones have an additional `_Cx.png` added to the name, where `x` is one of the four corners. |
+| **vahadane** | contains all the patches and its corresponding corner augmentations using Vahadane method for color normalization. Files are named in sequential order according to the annotations in the WSI and the augmented ones have an additional `_Cx.png` added to the name, where `x` is one of the four corners. Only available for 128x128. |
 
 ## Running the experiments: 
 ### **UNet - Experiment 01:**
