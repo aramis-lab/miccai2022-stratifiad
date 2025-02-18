@@ -45,7 +45,7 @@ pipenv shell
 ```
 
 ## Structure of the dataset:
-The acquisition of the WSI and the patch generation process is described in the article. The dataset used for the three experiments below can be found [here](https://doi.org/10.6084/m9.figshare.20188142.v1) (size: 128x128) and [here](https://doi.org/10.6084/m9.figshare.20186840.v1) (size: 256x256). The structure is as follows:
+The acquisition of the WSI and the patch generation process is described in the article. The dataset used for the three experiments is available upon request at gabriel.jimenez@icm-institute.org.
 
 ```
 dataset
